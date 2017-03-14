@@ -52,6 +52,17 @@ namespace ParcialTech.Registros
                 errorProvider1.SetError(textBoxNombres, "Favor Llenar");
                 return false;
             }
+            if (string.IsNullOrEmpty(comboBoxEmail.Text))
+            {
+                errorProvider1.SetError(comboBoxEmail, "Favor Llenar");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(comboBoxRetencion.Text))
+            {
+                errorProvider1.SetError(comboBoxRetencion, "Favor Llenar");
+                return false;
+            }
             return true;
         }
 
@@ -159,7 +170,9 @@ namespace ParcialTech.Registros
         {
             int id=Utilidades.TOINT(maskedTextBoxId.Text);
 
+
             Empleados busca = BLL.EmpleadosBLL.Buscar((p => p.EmpleadoId == id));
+  
 
             if (busca != null)
             {

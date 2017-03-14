@@ -35,17 +35,7 @@ namespace BLL
             return Result;
         }
 
-        public static Empleados Buscando(int tipo)
-        {
-            Empleados Result = null;
-            using (var repositorio = new ParcialDb())
-            {
-                
-
-
-            }
-            return Result;
-        }
+        
 
         public static bool Mofidicar(Empleados criterio)
         {

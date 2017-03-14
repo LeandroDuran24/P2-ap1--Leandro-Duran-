@@ -12,9 +12,16 @@ namespace ParcialTech.Registros
 {
     public partial class EmpleadosForm : Form
     {
+        Empleados empleado;
         public EmpleadosForm()
         {
             InitializeComponent();
+            LlenarCombo();
+            Limpiar();
+        }
+        private void EmpleadosForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         public void Limpiar()
@@ -24,8 +31,9 @@ namespace ParcialTech.Registros
             textBoxNombres.Clear();
             errorProvider1.Clear();
             dateTimePicker1.Value = DateTime.Today;
+            dataGridViewRetencion.DataSource = null;
+            empleado = new Empleados();
         }
-
 
         public bool Validar()
         {
@@ -49,8 +57,27 @@ namespace ParcialTech.Registros
             guarda.Nombres = textBoxNombres.Text;
             guarda.FechaNacimiento = dateTimePicker1.Value;
             guarda.Sueldo = Utilidades.TOINT(maskedTextBoxSueldo.Text);
+            guarda.RetencionId = Utilidades.TOINT(comboBoxRetencion.SelectedValue.ToString());
             return guarda;
         }
+
+        public void LLenarData(Empleados nuevo)
+        {
+            dataGridViewRetencion.DataSource = null;
+            dataGridViewRetencion.DataSource = nuevo.retencionList;
+        }
+
+        public void LlenarCombo()
+        {
+            List<Retenciones> lista = BLL.RetencionesBLL.GetListTodo();
+            comboBoxRetencion.DataSource = lista;
+            comboBoxRetencion.DisplayMember = "Descripcion";
+            comboBoxRetencion.ValueMember = "RetencionId";
+
+            if (comboBoxRetencion.Items.Count > 0)
+                comboBoxRetencion.SelectedIndex = -1;
+        }
+
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -102,8 +129,6 @@ namespace ParcialTech.Registros
         {
             int id = int.Parse(maskedTextBoxId.Text);
 
-
-
             Empleados busca = BLL.EmpleadosBLL.Buscar((p => p.EmpleadoId == id));
 
             if (busca != null)
@@ -119,7 +144,16 @@ namespace ParcialTech.Registros
                 MessageBox.Show("No existe");
             }
 
-
         }
+
+        private void AgregarRetencion_Click(object sender, EventArgs e)
+        {
+            Retenciones lista = new Retenciones();
+            lista = (Retenciones)comboBoxRetencion.SelectedItem;
+            empleado.retencionList.Add(lista);
+            LLenarData(empleado);
+        }
+
+
     }
 }

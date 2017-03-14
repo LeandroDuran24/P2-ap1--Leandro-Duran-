@@ -1,4 +1,6 @@
-﻿namespace ParcialTech
+﻿using System;
+
+namespace ParcialTech
 {
     partial class Menu
     {
@@ -34,8 +36,6 @@
             this.tendenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiposEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.retencionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tiposEmailToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -85,25 +85,10 @@
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.retencionesToolStripMenuItem,
-            this.tiposEmailToolStripMenuItem1,
             this.empleadosToolStripMenuItem1});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
-            // 
-            // retencionesToolStripMenuItem
-            // 
-            this.retencionesToolStripMenuItem.Name = "retencionesToolStripMenuItem";
-            this.retencionesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.retencionesToolStripMenuItem.Text = "Retenciones";
-            this.retencionesToolStripMenuItem.Click += new System.EventHandler(this.retencionesToolStripMenuItem_Click);
-            // 
-            // tiposEmailToolStripMenuItem1
-            // 
-            this.tiposEmailToolStripMenuItem1.Name = "tiposEmailToolStripMenuItem1";
-            this.tiposEmailToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.tiposEmailToolStripMenuItem1.Text = "TiposEmail";
             // 
             // empleadosToolStripMenuItem1
             // 
@@ -128,6 +113,16 @@
 
         }
 
+        private void retencionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tendenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -136,8 +131,6 @@
         private System.Windows.Forms.ToolStripMenuItem tendenciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tiposEmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem retencionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tiposEmailToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem1;
     }
 }

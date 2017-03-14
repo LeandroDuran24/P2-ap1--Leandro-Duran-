@@ -24,11 +24,7 @@ namespace ParcialTech
             em.Show();
         }
 
-        private void tendenciasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RetencionesForm rf = new RetencionesForm();
-            rf.Show();
-        }
+        
 
         private void tiposEmailToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -36,12 +32,7 @@ namespace ParcialTech
             tf.Show();
         }
 
-        private void retencionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RetencionesConsulta cr = new RetencionesConsulta();
-            cr.Show();
-        }
-
+       
         private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ConsultaEmpleados ce = new ConsultaEmpleados();

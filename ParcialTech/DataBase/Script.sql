@@ -11,9 +11,10 @@ Descripcion varchar(255),
 
 create table Empleados(
 EmpleadoId int identity(1,1)primary key,
-Nombes varchar(50),
+Nombres varchar(50),
 FechaNacimiento datetime,
-Sueldo float
+Sueldo int,
+RetencionId int
 );
 
 create table EmpleadosDescuentos(

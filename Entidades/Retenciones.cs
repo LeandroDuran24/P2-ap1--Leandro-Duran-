@@ -9,7 +9,7 @@ namespace Entidades
     public class Retenciones
     {
         [Key]
-        public int RetencionesId { get; set; }
+        public int RetencionId { get; set; }
         public string Descripcion { get; set; }
         public int Valor { get; set; }
 

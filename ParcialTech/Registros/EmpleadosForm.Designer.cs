@@ -251,6 +251,7 @@
             this.AgregarEmail.TabIndex = 11;
             this.AgregarEmail.Text = "Agregar";
             this.AgregarEmail.UseVisualStyleBackColor = true;
+            this.AgregarEmail.Click += new System.EventHandler(this.AgregarEmail_Click);
             // 
             // comboBoxEmail
             // 

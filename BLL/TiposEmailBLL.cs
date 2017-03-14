@@ -27,6 +27,8 @@ namespace BLL
             using (var repoitorio = new Repositorio<TiposEmails>())
             {
                 Result = repoitorio.Buscar(tipo);
+                if (Result != null)
+                    Result.empleadoLista.Count();
             }
 
             return Result;

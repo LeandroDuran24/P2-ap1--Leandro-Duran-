@@ -21,6 +21,8 @@ namespace BLL
             return creado;
         }
 
+
+
         public static EmpleadosRetenciones Buscar(Expression<Func<EmpleadosRetenciones, bool>> tipo)
         {
             EmpleadosRetenciones Result = null;
@@ -75,6 +77,7 @@ namespace BLL
         }
 
 
+
         public static List<EmpleadosRetenciones> GetList(Expression<Func<EmpleadosRetenciones, bool>> criterio)
         {
             List<EmpleadosRetenciones> lista = null;
@@ -93,5 +96,6 @@ namespace BLL
             return lista;
 
         }
+        
     }
 }

@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace ParcialTech
+﻿namespace ParcialTech
 {
-    partial class Menu
+    partial class MenuPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -97,30 +95,21 @@ namespace ParcialTech
             this.empleadosToolStripMenuItem1.Text = "Empleados";
             this.empleadosToolStripMenuItem1.Click += new System.EventHandler(this.empleadosToolStripMenuItem1_Click);
             // 
-            // Menu
+            // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Menu";
-            this.Text = "Menu";
+            this.Name = "MenuPrincipal";
+            this.Text = "MenuPrincipal";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void retencionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tendenciasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         #endregion

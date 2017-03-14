@@ -23,9 +23,11 @@ namespace BLL
         public static Retenciones Buscar(Expression<Func<Retenciones, bool>> tipo)
         {
             Retenciones Result = null;
-            using (var repoitorio = new Repositorio<Retenciones>())
+            using (var repositorio = new Repositorio<Retenciones>())
             {
-                Result = repoitorio.Buscar(tipo);
+                Result = repositorio.Buscar(tipo);
+                if (Result != null)
+                    Result.EmpleadosList.Count();
             }
 
             return Result;
@@ -72,7 +74,6 @@ namespace BLL
                 return lista;
             }
         }
-
 
         public static List<Retenciones> GetList(Expression<Func<Retenciones, bool>> criterio)
         {

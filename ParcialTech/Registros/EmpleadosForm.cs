@@ -13,15 +13,17 @@ namespace ParcialTech.Registros
     public partial class EmpleadosForm : Form
     {
         Empleados empleado;
+        EmpleadosEmails empleadoEmail;
+
         public EmpleadosForm()
         {
             InitializeComponent();
-            LlenarCombo();
             Limpiar();
         }
         private void EmpleadosForm_Load(object sender, EventArgs e)
         {
-
+            LlenarCombo();
+            LlenarComboEmail();
         }
 
         public void Limpiar()
@@ -31,8 +33,11 @@ namespace ParcialTech.Registros
             textBoxNombres.Clear();
             errorProvider1.Clear();
             dateTimePicker1.Value = DateTime.Today;
+            textBoxEmail.Clear();
             dataGridViewRetencion.DataSource = null;
+            dataGridViewEmail.DataSource = null;
             empleado = new Empleados();
+            empleadoEmail = new EmpleadosEmails();
         }
 
         public bool Validar()
@@ -53,18 +58,22 @@ namespace ParcialTech.Registros
         public Empleados LlenarCampos()
         {
             Empleados guarda = new Empleados();
+            EmpleadosEmails EmpEmail = new EmpleadosEmails();
             guarda.EmpleadoId = Utilidades.TOINT(maskedTextBoxId.Text);
             guarda.Nombres = textBoxNombres.Text;
             guarda.FechaNacimiento = dateTimePicker1.Value;
             guarda.Sueldo = Utilidades.TOINT(maskedTextBoxSueldo.Text);
             guarda.RetencionId = Utilidades.TOINT(comboBoxRetencion.SelectedValue.ToString());
+            EmpEmail.Email = textBoxEmail.Text;
+            EmpEmail.TipoId = Utilidades.TOINT(comboBoxEmail.SelectedValue.ToString());
+
             return guarda;
         }
 
-        public void LLenarData(Empleados nuevo)
+        public void LLenarDataRetencion(Empleados nuevo)
         {
             dataGridViewRetencion.DataSource = null;
-            dataGridViewRetencion.DataSource = nuevo.retencionList;
+            dataGridViewRetencion.DataSource = nuevo.RetencionList;
         }
 
         public void LlenarCombo()
@@ -76,6 +85,27 @@ namespace ParcialTech.Registros
 
             if (comboBoxRetencion.Items.Count > 0)
                 comboBoxRetencion.SelectedIndex = -1;
+        }
+
+        public void LlenarComboEmail()
+        {
+            List<TiposEmails> lista = BLL.TiposEmailBLL.GetListTodo();
+            comboBoxEmail.DataSource = lista;
+            comboBoxEmail.DisplayMember = "Descripcion";
+            comboBoxEmail.ValueMember = "TipoId";
+            comboBoxEmail.SelectedValue = empleadoEmail.TipoId ;
+
+            if (comboBoxEmail.Items.Count > 0)
+                comboBoxEmail.SelectedIndex = -1;
+        }
+
+        public void LlenarDataEmail(Empleados nuevo)
+        {
+            dataGridViewEmail.DataSource = null;
+            dataGridViewEmail.DataSource = nuevo.EmailList.ToList();
+            this.dataGridViewEmail.Columns["TipoLista"].Visible = false;
+            this.dataGridViewEmail.Columns["Id"].Visible = false;
+            this.dataGridViewEmail.Columns["EmpleadoId"].Visible = false;
         }
 
         private void buttonNuevo_Click(object sender, EventArgs e)
@@ -127,7 +157,7 @@ namespace ParcialTech.Registros
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(maskedTextBoxId.Text);
+            int id=Utilidades.TOINT(maskedTextBoxId.Text);
 
             Empleados busca = BLL.EmpleadosBLL.Buscar((p => p.EmpleadoId == id));
 
@@ -135,9 +165,13 @@ namespace ParcialTech.Registros
             {
                 textBoxNombres.Text = busca.Nombres;
                 maskedTextBoxSueldo.Text = Convert.ToString(busca.Sueldo);
+                dateTimePicker1.Value = busca.FechaNacimiento;
                 MessageBox.Show("Correcto");
 
+                LLenarDataRetencion(busca);
+
             }
+
             else
 
             {
@@ -150,10 +184,14 @@ namespace ParcialTech.Registros
         {
             Retenciones lista = new Retenciones();
             lista = (Retenciones)comboBoxRetencion.SelectedItem;
-            empleado.retencionList.Add(lista);
-            LLenarData(empleado);
+            empleado.RetencionList.Add(lista);
+            LLenarDataRetencion(empleado);
         }
 
-
+        private void AgregarEmail_Click_1(object sender, EventArgs e)
+        {
+            empleado.AgregarEmailDetalle(empleadoEmail.TipoLista, textBoxEmail.Text);
+            LlenarDataEmail(empleado);
+        }
     }
 }

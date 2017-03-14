@@ -1,4 +1,6 @@
-﻿namespace ParcialTech.Registros
+﻿using System;
+
+namespace ParcialTech.Registros
 {
     partial class EmpleadosForm
     {
@@ -48,8 +50,10 @@
             this.comboBoxRetencion = new System.Windows.Forms.ComboBox();
             this.dataGridViewRetencion = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.AgregarEmail = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.comboBoxEmail = new System.Windows.Forms.ComboBox();
             this.dataGridViewEmail = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -62,7 +66,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(129, 10);
+            this.label1.Location = new System.Drawing.Point(306, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 0;
@@ -71,7 +75,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(129, 42);
+            this.label2.Location = new System.Drawing.Point(306, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 0;
@@ -80,7 +84,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(129, 72);
+            this.label3.Location = new System.Drawing.Point(306, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 13);
             this.label3.TabIndex = 0;
@@ -89,7 +93,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(138, 98);
+            this.label4.Location = new System.Drawing.Point(315, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 0;
@@ -97,7 +101,7 @@
             // 
             // maskedTextBoxId
             // 
-            this.maskedTextBoxId.Location = new System.Drawing.Point(226, 10);
+            this.maskedTextBoxId.Location = new System.Drawing.Point(403, 12);
             this.maskedTextBoxId.Mask = "99999";
             this.maskedTextBoxId.Name = "maskedTextBoxId";
             this.maskedTextBoxId.Size = new System.Drawing.Size(131, 20);
@@ -106,14 +110,14 @@
             // 
             // textBoxNombres
             // 
-            this.textBoxNombres.Location = new System.Drawing.Point(226, 39);
+            this.textBoxNombres.Location = new System.Drawing.Point(403, 41);
             this.textBoxNombres.Name = "textBoxNombres";
             this.textBoxNombres.Size = new System.Drawing.Size(212, 20);
             this.textBoxNombres.TabIndex = 1;
             // 
             // maskedTextBoxSueldo
             // 
-            this.maskedTextBoxSueldo.Location = new System.Drawing.Point(226, 91);
+            this.maskedTextBoxSueldo.Location = new System.Drawing.Point(403, 93);
             this.maskedTextBoxSueldo.Mask = "99999";
             this.maskedTextBoxSueldo.Name = "maskedTextBoxSueldo";
             this.maskedTextBoxSueldo.Size = new System.Drawing.Size(212, 20);
@@ -124,14 +128,14 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyy/MM/dd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(226, 65);
+            this.dateTimePicker1.Location = new System.Drawing.Point(403, 67);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(212, 20);
             this.dateTimePicker1.TabIndex = 2;
             // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(363, 406);
+            this.buttonEliminar.Location = new System.Drawing.Point(431, 403);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(75, 23);
             this.buttonEliminar.TabIndex = 9;
@@ -141,7 +145,7 @@
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(282, 406);
+            this.buttonGuardar.Location = new System.Drawing.Point(350, 403);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
             this.buttonGuardar.TabIndex = 5;
@@ -151,7 +155,7 @@
             // 
             // buttonNuevo
             // 
-            this.buttonNuevo.Location = new System.Drawing.Point(201, 406);
+            this.buttonNuevo.Location = new System.Drawing.Point(269, 403);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(75, 23);
             this.buttonNuevo.TabIndex = 8;
@@ -161,7 +165,7 @@
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(363, 10);
+            this.buttonBuscar.Location = new System.Drawing.Point(540, 12);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscar.TabIndex = 7;
@@ -215,6 +219,7 @@
             // 
             // dataGridViewRetencion
             // 
+            this.dataGridViewRetencion.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewRetencion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRetencion.Location = new System.Drawing.Point(6, 66);
             this.dataGridViewRetencion.Name = "dataGridViewRetencion";
@@ -223,57 +228,76 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.textBoxEmail);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.AgregarEmail);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.comboBoxEmail);
             this.groupBox2.Controls.Add(this.dataGridViewEmail);
-            this.groupBox2.Location = new System.Drawing.Point(445, 163);
+            this.groupBox2.Location = new System.Drawing.Point(403, 150);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(300, 172);
+            this.groupBox2.Size = new System.Drawing.Size(543, 172);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "TiposEmail";
             // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Location = new System.Drawing.Point(247, 35);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(198, 20);
+            this.textBoxEmail.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(209, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Email";
+            // 
+            // AgregarEmail
+            // 
+            this.AgregarEmail.Location = new System.Drawing.Point(451, 35);
+            this.AgregarEmail.Name = "AgregarEmail";
+            this.AgregarEmail.Size = new System.Drawing.Size(75, 23);
+            this.AgregarEmail.TabIndex = 20;
+            this.AgregarEmail.Text = "Agregar";
+            this.AgregarEmail.UseVisualStyleBackColor = true;
+            this.AgregarEmail.Click += new System.EventHandler(this.AgregarEmail_Click_1);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 38);
+            this.label6.Location = new System.Drawing.Point(6, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 20;
             this.label6.Text = "TiposEmail";
             // 
-            // AgregarEmail
-            // 
-            this.AgregarEmail.Location = new System.Drawing.Point(219, 30);
-            this.AgregarEmail.Name = "AgregarEmail";
-            this.AgregarEmail.Size = new System.Drawing.Size(75, 23);
-            this.AgregarEmail.TabIndex = 11;
-            this.AgregarEmail.Text = "Agregar";
-            this.AgregarEmail.UseVisualStyleBackColor = true;
-            this.AgregarEmail.Click += new System.EventHandler(this.AgregarEmail_Click);
-            // 
             // comboBoxEmail
             // 
             this.comboBoxEmail.FormattingEnabled = true;
-            this.comboBoxEmail.Location = new System.Drawing.Point(92, 30);
+            this.comboBoxEmail.Location = new System.Drawing.Point(70, 35);
             this.comboBoxEmail.Name = "comboBoxEmail";
             this.comboBoxEmail.Size = new System.Drawing.Size(121, 21);
             this.comboBoxEmail.TabIndex = 10;
             // 
             // dataGridViewEmail
             // 
+            this.dataGridViewEmail.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewEmail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEmail.Location = new System.Drawing.Point(6, 66);
             this.dataGridViewEmail.Name = "dataGridViewEmail";
-            this.dataGridViewEmail.Size = new System.Drawing.Size(288, 100);
+            this.dataGridViewEmail.Size = new System.Drawing.Size(531, 100);
             this.dataGridViewEmail.TabIndex = 0;
             // 
             // EmpleadosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 480);
+            this.ClientSize = new System.Drawing.Size(952, 480);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonBuscar);
@@ -303,6 +327,11 @@
 
         }
 
+        private void AgregarEmail_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private System.Windows.Forms.Label label1;
@@ -320,7 +349,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button AgregarEmail;
         private System.Windows.Forms.ComboBox comboBoxEmail;
         private System.Windows.Forms.DataGridView dataGridViewEmail;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -328,5 +356,8 @@
         private System.Windows.Forms.Button AgregarRetencion;
         private System.Windows.Forms.ComboBox comboBoxRetencion;
         private System.Windows.Forms.DataGridView dataGridViewRetencion;
+        private System.Windows.Forms.Button AgregarEmail;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.Label label7;
     }
 }

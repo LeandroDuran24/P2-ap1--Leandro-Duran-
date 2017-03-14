@@ -13,11 +13,11 @@ namespace Entidades
         public string Descripcion { get; set; }
         public int Valor { get; set; }
 
-        public virtual List<Empleados>empleadosList { get; set; }
+        public virtual List<Empleados>EmpleadosList { get; set; }
 
         public Retenciones()
         {
-            this.empleadosList = new List<Empleados>();
+            this.EmpleadosList = new List<Empleados>();
         }
     }
 }

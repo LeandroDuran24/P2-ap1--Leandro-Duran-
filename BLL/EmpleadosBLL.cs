@@ -24,13 +24,30 @@ namespace BLL
         public static Empleados Buscar(Expression<Func<Empleados, bool>> tipo)
         {
             Empleados Result = null;
-            using (var repoitorio = new Repositorio<Empleados>())
+            using (var repositorio = new Repositorio<Empleados>())
             {
-                Result = repoitorio.Buscar(tipo);
-            }
+                Result = repositorio.Buscar(tipo);
+                if (Result != null)
+                    Result.RetencionList.Count();
 
+
+            }
             return Result;
         }
+
+        /*public static Empleados Buscando(int tipo)
+        {
+            Empleados Result = null;
+            using (var repositorio = new ParcialDb())
+            {
+                Result = repositorio.Buscar(tipo);
+                if (Result != null)
+                    Result.RetencionList.Count();
+
+
+            }
+            return Result;
+        }*/
 
         public static bool Mofidicar(Empleados criterio)
         {
@@ -93,5 +110,7 @@ namespace BLL
             return lista;
 
         }
+
+
     }
 }

@@ -15,13 +15,25 @@ namespace Entidades
         public int Sueldo { get; set; }
         public int RetencionId { get; set; }
 
-        public virtual List<Retenciones> retencionList { get; set; }
-        public virtual ICollection<TiposEmails> TipoEmailList { get; set; }
+        public virtual List<Retenciones> RetencionList { get; set; }
+        //public virtual List<TiposEmails> tipoList { get; set; }
+        public virtual ICollection<EmpleadosEmails> EmailList { get; set; }
 
         public Empleados()
         {
-            this.retencionList = new List<Retenciones>();
-            this.TipoEmailList = new HashSet<TiposEmails>();
+            this.RetencionList = new List<Retenciones>();
+            //this.tipoList = new List<TiposEmails>();
+            this.EmailList = new HashSet<EmpleadosEmails>();
         }
+
+        public void AgregarEmailDetalle(TiposEmails nuevo,string email)
+        {
+            this.EmailList.Add(new EmpleadosEmails(nuevo.TipoId, email));
+        }
+      
+
+
+
+
     }
 }

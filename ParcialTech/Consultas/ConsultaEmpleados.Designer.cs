@@ -49,7 +49,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(348, 57);
+            this.label4.Location = new System.Drawing.Point(336, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 45;
@@ -64,7 +64,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 77);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(657, 197);
+            this.dataGridView1.Size = new System.Drawing.Size(645, 197);
             this.dataGridView1.TabIndex = 36;
             // 
             // comboBox1
@@ -72,7 +72,7 @@
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(179, 24);
+            this.comboBox1.Location = new System.Drawing.Point(167, 24);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 21);
             this.comboBox1.TabIndex = 1;
@@ -80,7 +80,7 @@
             // BuscartextBox
             // 
             this.BuscartextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BuscartextBox.Location = new System.Drawing.Point(399, 24);
+            this.BuscartextBox.Location = new System.Drawing.Point(387, 24);
             this.BuscartextBox.Name = "BuscartextBox";
             this.BuscartextBox.Size = new System.Drawing.Size(154, 20);
             this.BuscartextBox.TabIndex = 2;
@@ -90,7 +90,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(113, 31);
+            this.label1.Location = new System.Drawing.Point(101, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 40;
@@ -101,7 +101,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(338, 31);
+            this.label2.Location = new System.Drawing.Point(326, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 41;
@@ -112,7 +112,7 @@
             this.desdedateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.desdedateTimePicker.CustomFormat = "yyy/MM/dd";
             this.desdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.desdedateTimePicker.Location = new System.Drawing.Point(179, 51);
+            this.desdedateTimePicker.Location = new System.Drawing.Point(167, 51);
             this.desdedateTimePicker.Name = "desdedateTimePicker";
             this.desdedateTimePicker.Size = new System.Drawing.Size(153, 20);
             this.desdedateTimePicker.TabIndex = 4;
@@ -123,7 +123,7 @@
             this.hastadateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.hastadateTimePicker.CustomFormat = "yyy/MM/dd";
             this.hastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.hastadateTimePicker.Location = new System.Drawing.Point(400, 51);
+            this.hastadateTimePicker.Location = new System.Drawing.Point(388, 51);
             this.hastadateTimePicker.Name = "hastadateTimePicker";
             this.hastadateTimePicker.Size = new System.Drawing.Size(153, 20);
             this.hastadateTimePicker.TabIndex = 5;
@@ -134,7 +134,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(113, 58);
+            this.label3.Location = new System.Drawing.Point(101, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 44;
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 315);
+            this.ClientSize = new System.Drawing.Size(673, 315);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

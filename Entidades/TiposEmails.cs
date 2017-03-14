@@ -6,12 +6,13 @@ using System.Text;
 
 namespace Entidades
 {
-   public class EmpleadosEmail
+   public  class TiposEmails
     {
         [Key]
-        public int Id { get; set; }
-        public int EmpleadoId { get; set; }
         public int TipoId { get; set; }
-        public string Email { get; set; }
+        public string Descripcion { get; set; }
+
+        public virtual Empleados empleadoLista { get; set; }
+       
     }
 }

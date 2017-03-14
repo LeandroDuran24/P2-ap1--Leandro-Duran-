@@ -16,10 +16,12 @@ namespace Entidades
         public int RetencionId { get; set; }
 
         public virtual List<Retenciones> retencionList { get; set; }
+        public virtual ICollection<TiposEmails> TipoEmailList { get; set; }
 
         public Empleados()
         {
             this.retencionList = new List<Retenciones>();
+            this.TipoEmailList = new HashSet<TiposEmails>();
         }
     }
 }

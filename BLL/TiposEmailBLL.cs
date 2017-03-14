@@ -10,21 +10,21 @@ namespace BLL
 {
     public class TiposEmailBLL
     {
-        public static Entidades.TiposEmail Guardar(Entidades.TiposEmail nuevo)
+        public static Entidades.TiposEmails Guardar(Entidades.TiposEmails nuevo)
         {
-            TiposEmail creado = null;
+            TiposEmails creado = null;
 
-            using (var db = new Repositorio<TiposEmail>())
+            using (var db = new Repositorio<TiposEmails>())
             {
                 creado = db.Guardar(nuevo);
             }
             return creado;
         }
 
-        public static TiposEmail Buscar(Expression<Func<TiposEmail, bool>> tipo)
+        public static TiposEmails Buscar(Expression<Func<TiposEmails, bool>> tipo)
         {
-            TiposEmail Result = null;
-            using (var repoitorio = new Repositorio<TiposEmail>())
+            TiposEmails Result = null;
+            using (var repoitorio = new Repositorio<TiposEmails>())
             {
                 Result = repoitorio.Buscar(tipo);
             }
@@ -32,10 +32,10 @@ namespace BLL
             return Result;
         }
 
-        public static bool Mofidicar(TiposEmail criterio)
+        public static bool Mofidicar(TiposEmails criterio)
         {
             bool mod = false;
-            using (var db = new Repositorio<TiposEmail>())
+            using (var db = new Repositorio<TiposEmails>())
             {
                 mod = db.Modificar(criterio);
             }
@@ -44,10 +44,10 @@ namespace BLL
 
         }
 
-        public static bool Eliminar(TiposEmail existente)
+        public static bool Eliminar(TiposEmails existente)
         {
             bool eliminado = false;
-            using (var repositorio = new Repositorio<TiposEmail>())
+            using (var repositorio = new Repositorio<TiposEmails>())
             {
                 eliminado = repositorio.Eliminar(existente);
             }
@@ -57,10 +57,10 @@ namespace BLL
         }
 
 
-        public static List<TiposEmail> GetListTodo()
+        public static List<TiposEmails> GetListTodo()
         {
-            List<TiposEmail> lista = null;
-            using (var db = new Repositorio<TiposEmail>())
+            List<TiposEmails> lista = null;
+            using (var db = new Repositorio<TiposEmails>())
             {
                 try
                 {
@@ -76,10 +76,10 @@ namespace BLL
         }
 
 
-        public static List<TiposEmail> GetList(Expression<Func<TiposEmail, bool>> criterio)
+        public static List<TiposEmails> GetList(Expression<Func<TiposEmails, bool>> criterio)
         {
-            List<TiposEmail> lista = null;
-            using (var db = new Repositorio<TiposEmail>())
+            List<TiposEmails> lista = null;
+            using (var db = new Repositorio<TiposEmails>())
             {
                 try
                 {

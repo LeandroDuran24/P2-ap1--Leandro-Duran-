@@ -35,19 +35,17 @@ namespace BLL
             return Result;
         }
 
-        /*public static Empleados Buscando(int tipo)
+        public static Empleados Buscando(int tipo)
         {
             Empleados Result = null;
             using (var repositorio = new ParcialDb())
             {
-                Result = repositorio.Buscar(tipo);
-                if (Result != null)
-                    Result.RetencionList.Count();
+                
 
 
             }
             return Result;
-        }*/
+        }
 
         public static bool Mofidicar(Empleados criterio)
         {

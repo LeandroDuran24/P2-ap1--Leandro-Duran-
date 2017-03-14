@@ -7,7 +7,7 @@ using Entidades;
 
 namespace DAL
 {
-    class ParcialDb:DbContext
+    public class ParcialDb:DbContext
     {
         public ParcialDb() : base("ConStr")
         {

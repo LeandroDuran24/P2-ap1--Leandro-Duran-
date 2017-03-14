@@ -18,34 +18,28 @@ namespace ParcialTech
             InitializeComponent();
         }
 
+        private void retencionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RetencionesForm r = new RetencionesForm();
+            r.Show();
+        }
+
+        private void tiposEmailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TiposEmailForm em = new TiposEmailForm();
+            em.Show();
+        }
+
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EmpleadosForm em = new EmpleadosForm();
             em.Show();
         }
 
-        private void tendenciasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RetencionesForm rf = new RetencionesForm();
-            rf.Show();
-        }
-
-        private void tiposEmailToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TiposEmailForm tf = new TiposEmailForm();
-            tf.Show();
-        }
-
-        private void retencionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RetencionesConsulta cr = new RetencionesConsulta();
-            cr.Show();
-        }
-
         private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ConsultaEmpleados ce = new ConsultaEmpleados();
-            ce.Show();
+            ConsultaEmpleados c = new ConsultaEmpleados();
+            c.Show();
         }
     }
 }

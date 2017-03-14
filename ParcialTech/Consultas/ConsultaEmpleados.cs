@@ -15,8 +15,8 @@ namespace ParcialTech.Consultas
         {
             InitializeComponent();
             LLenarCombo();
-            
         }
+
         public bool Validar()
         {
             if (string.IsNullOrEmpty(BuscartextBox.Text))
@@ -33,25 +33,22 @@ namespace ParcialTech.Consultas
             return true;
         }
 
-        public bool ValidarCombo()
+        public void Limpiar()
         {
-            if (string.IsNullOrEmpty(comboBox1.Text))
-            {
-                errorProvider1.SetError(comboBox1, "favor Llenar");
-                return false;
-            }
-            return true;
+            BuscartextBox.Clear();
+            errorProvider1.Clear();
+            comboBox1.Text = null;
+            desdedateTimePicker.Value = DateTime.Today;
+            hastadateTimePicker.Value = DateTime.Today;
         }
 
         public void LLenarCombo()
         {
-            comboBox1.Items.Insert(0, "Id");
-            comboBox1.Items.Insert(1, "Nombres");
-            comboBox1.Items.Insert(2, "Fecha");
-            comboBox1.Items.Insert(3, "Sueldo");
-            comboBox1.Items.Insert(4, "Todos");
+
+            comboBox1.Items.Insert(0, "Nombres");
+            comboBox1.Items.Insert(1, "Fecha");
             comboBox1.DataSource = comboBox1.Items;
-            comboBox1.DisplayMember = "Id";
+            comboBox1.DisplayMember = "Nombres";
 
             if (comboBox1.Items.Count > 0)
                 comboBox1.SelectedIndex = -1;
@@ -68,56 +65,42 @@ namespace ParcialTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.EmpleadosBLL.GetList(p => p.EmpleadoId == Utilidades.TOINT(BuscartextBox.Text));
+                    dataGridView1.DataSource = BLL.EmpleadosBLL.GetList(p => p.Nombres == BuscartextBox.Text);
+                    
                 }
             }
-            else
-            if (comboBox1.SelectedIndex == 1)
+            else     
             {
-                if (!Validar())
+               
+                if (desdedateTimePicker.Value.Date < hastadateTimePicker.Value.Date)
                 {
-                    MessageBox.Show("Favor Llenar");
+                    dataGridView1.DataSource = BLL.EmpleadosBLL.GetList(p => p.FechaNacimiento >= desdedateTimePicker.Value.Date && p.FechaNacimiento <= hastadateTimePicker.Value.Date);
+
+                    button1.Focus();
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.EmpleadosBLL.GetList(p => p.Nombres == BuscartextBox.Text);
-                }
-            }
-            else
-            if (comboBox1.SelectedIndex == 2)
-            {
-                if (desdedateTimePicker.Value.Date > hastadateTimePicker.Value.Date)
-                {
-                    dataGridView1.DataSource = BLL.EmpleadosBLL.GetList(p => p.FechaNacimiento >= desdedateTimePicker.Value.Date && p.FechaNacimiento <= hastadateTimePicker.Value.Date);
+                    MessageBox.Show("Poner intervalo de Fecha bien");
                 }
 
             }
-            else
-            if (comboBox1.SelectedIndex == 3)
-            {
-                if(!Validar())
-                {
-                    MessageBox.Show("Favor Llenar");
-                }
-                else
-                {
-                   
-                    dataGridView1.DataSource = BLL.EmpleadosBLL.GetList(p => p.Sueldo == Convert.ToDouble(BuscartextBox.Text));
-                }
-            }
-            else
-            {
-                if (!ValidarCombo())
-                {
-                    dataGridView1.DataSource = BLL.RetencionesBLL.GetListTodo();
-                }
-            }
+            Limpiar();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Seleccionar();
+        }
+
+        private void desdedateTimePicker_EnabledChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void hastadateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

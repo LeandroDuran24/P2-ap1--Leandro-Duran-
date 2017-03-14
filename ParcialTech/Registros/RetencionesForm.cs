@@ -52,7 +52,7 @@ namespace ParcialTech.Registros
         public Retenciones LlenarCampos()
         {
             var lleno = new Retenciones();
-            lleno.RetencionesId = Utilidades.TOINT(maskedTextBoxId.Text);
+            lleno.RetencionId = Utilidades.TOINT(maskedTextBoxId.Text);
             lleno.Descripcion = textBoxDescripcion.Text;
             lleno.Valor = Utilidades.TOINT(maskedTextBoxValor.Text);
             return lleno;
@@ -61,7 +61,7 @@ namespace ParcialTech.Registros
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(maskedTextBoxId.Text);
-            Retenciones eliminar = BLL.RetencionesBLL.Buscar(p => p.RetencionesId == id);
+            Retenciones eliminar = BLL.RetencionesBLL.Buscar(p => p.RetencionId == id);
 
             if (eliminar != null)
             {
@@ -85,7 +85,7 @@ namespace ParcialTech.Registros
             else
             {
                 guardo = LlenarCampos();
-                if (id != guardo.RetencionesId)
+                if (id != guardo.RetencionId)
                 {
                     BLL.RetencionesBLL.Mofidicar(guardo);
                     MessageBox.Show("Modificado");
@@ -108,7 +108,7 @@ namespace ParcialTech.Registros
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(maskedTextBoxId.Text);
-            Retenciones busca = BLL.RetencionesBLL.Buscar((p => p.RetencionesId == id));
+            Retenciones busca = BLL.RetencionesBLL.Buscar((p => p.RetencionId == id));
 
             if (busca != null)
             {

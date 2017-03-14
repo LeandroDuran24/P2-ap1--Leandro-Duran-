@@ -12,13 +12,16 @@ namespace Entidades
         public int EmpleadoId { get; set; }
         public string Nombres { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        public double Sueldo { get; set; }
+        public int Sueldo { get; set; }
+        public int RetencionId { get; set; }
 
         public virtual List<Retenciones> retencionList { get; set; }
+        public virtual ICollection<TiposEmails> TipoEmailList { get; set; }
 
         public Empleados()
         {
             this.retencionList = new List<Retenciones>();
+            this.TipoEmailList = new HashSet<TiposEmails>();
         }
     }
 }

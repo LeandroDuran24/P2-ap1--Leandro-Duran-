@@ -75,7 +75,7 @@
             this.comboBox1.Location = new System.Drawing.Point(179, 24);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 21);
-            this.comboBox1.TabIndex = 38;
+            this.comboBox1.TabIndex = 1;
             // 
             // BuscartextBox
             // 
@@ -83,7 +83,7 @@
             this.BuscartextBox.Location = new System.Drawing.Point(399, 24);
             this.BuscartextBox.Name = "BuscartextBox";
             this.BuscartextBox.Size = new System.Drawing.Size(154, 20);
-            this.BuscartextBox.TabIndex = 39;
+            this.BuscartextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -115,7 +115,8 @@
             this.desdedateTimePicker.Location = new System.Drawing.Point(179, 51);
             this.desdedateTimePicker.Name = "desdedateTimePicker";
             this.desdedateTimePicker.Size = new System.Drawing.Size(153, 20);
-            this.desdedateTimePicker.TabIndex = 42;
+            this.desdedateTimePicker.TabIndex = 4;
+            this.desdedateTimePicker.EnabledChanged += new System.EventHandler(this.desdedateTimePicker_EnabledChanged);
             // 
             // hastadateTimePicker
             // 
@@ -125,7 +126,8 @@
             this.hastadateTimePicker.Location = new System.Drawing.Point(400, 51);
             this.hastadateTimePicker.Name = "hastadateTimePicker";
             this.hastadateTimePicker.Size = new System.Drawing.Size(153, 20);
-            this.hastadateTimePicker.TabIndex = 43;
+            this.hastadateTimePicker.TabIndex = 5;
+            this.hastadateTimePicker.ValueChanged += new System.EventHandler(this.hastadateTimePicker_ValueChanged);
             // 
             // label3
             // 
@@ -140,10 +142,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(538, 47);
+            this.button1.Location = new System.Drawing.Point(559, 51);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 46;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Filtrar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

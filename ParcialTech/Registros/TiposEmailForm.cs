@@ -37,9 +37,9 @@ namespace ParcialTech.Registros
 
         }
 
-        public TiposEmail LlenarCampos()
+        public TiposEmails LlenarCampos()
         {
-            var lleno = new TiposEmail();
+            var lleno = new TiposEmails();
             lleno.TipoId = Utilidades.TOINT(maskedTextBoxId.Text);
             lleno.Descripcion = textBoxDescripcion.Text;
 
@@ -54,7 +54,7 @@ namespace ParcialTech.Registros
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(maskedTextBoxId.Text);
-            TiposEmail busca = BLL.TiposEmailBLL.Buscar((p => p.TipoId == id));
+            TiposEmails busca = BLL.TiposEmailBLL.Buscar((p => p.TipoId == id));
 
             if (busca != null)
             {
@@ -72,7 +72,7 @@ namespace ParcialTech.Registros
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             int id = 0;
-            var guardo = new TiposEmail();
+            var guardo = new TiposEmails();
             if (!Validar())
             {
                 MessageBox.Show("Favor Llenar");
@@ -98,7 +98,7 @@ namespace ParcialTech.Registros
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(maskedTextBoxId.Text);
-            TiposEmail eliminar = BLL.TiposEmailBLL.Buscar(p => p.TipoId == id);
+            TiposEmails eliminar = BLL.TiposEmailBLL.Buscar(p => p.TipoId == id);
 
             if (eliminar != null)
             {
